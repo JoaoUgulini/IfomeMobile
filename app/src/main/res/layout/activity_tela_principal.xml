@@ -1,17 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TelaPrincipal">
+    android:background="#FFFF00"
+    android:padding="16dp">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tela Principal"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="36dp" />
+        android:orientation="vertical">
 
-</LinearLayout>
+
+        <TextView
+            android:id="@+id/text_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FF0000"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Pedidos - IFome!!!"
+            android:textColor="#FFFF00"
+            android:textSize="24sp" />
+
+        <CheckBox
+            android:id="@+id/checkbox_pizza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pizza" />
+
+        <RadioGroup
+            android:id="@+id/radio_group_tamanho"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="16dp">
+
+            <RadioButton
+                android:id="@+id/radio_pequena"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pequena" />
+
+            <RadioButton
+                android:id="@+id/radio_media"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Média" />
+
+            <RadioButton
+                android:id="@+id/radio_grande"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grande" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/text_sabor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sabores"
+            android:layout_marginTop="16dp" />
+
+        <Spinner
+            android:id="@+id/spinner_sabor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/sabores"/>
+
+        <CheckBox
+            android:id="@+id/checkbox_bebida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bebida"
+            android:layout_marginTop="16dp" />
+
+        <Spinner
+            android:id="@+id/spinner_bebida"
+            android:layout_width="match_parent"
+            android:entries="@array/bebidas"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/text_entrega"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entrega"
+            android:layout_marginTop="16dp" />
+
+        <RadioGroup
+            android:id="@+id/radio_group_tele"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radio_entrega_local"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Entrega Local" />
+
+            <RadioButton
+                android:id="@+id/radio_tele_entrega"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tele Entrega" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/edit_endereco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Endereço tele entrega"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:id="@+id/edit_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btn_realizar_pedido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="REALIZAR PEDIDO"
+            android:background="#FF0000"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/btn_retornar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RETORNAR"
+            android:background="#FF0000"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</ScrollView>

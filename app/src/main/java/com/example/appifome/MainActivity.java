@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... arg0) {
             try {
-                String url = "http://200.132.17.157/ifome/consulta_login.php";
+                String url = "http://200.132.172.204//ifome/consulta_login.php";
                 JSONObject jsonValores = new JSONObject();
                 jsonValores.put("login", edtlogin.getText().toString());
                 jsonValores.put("senha", edtsenha.getText().toString());

@@ -10,7 +10,7 @@ $conexao = mysqli_connect($servidor, $usuario, $senha, $banco);
 $json = file_get_contents('php://input');
 $obj = json_decode($json);
 
-$texto1=$obj->nome;	
+$texto1=$obj->nome;
 $texto2=$obj->senha;
 $texto3=$obj->endereco;
 $texto4=$obj->fone;
