@@ -1,82 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF0000"
+    android:background="#FFF5F5F5"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <!-- Logo -->
+<ImageView
+android:layout_width="150dp"
+android:layout_height="150dp"
+android:layout_gravity="center_horizontal"
+android:layout_marginTop="48dp"
+android:src="@drawable/logoifome"
+android:contentDescription="Logo IFome" />
 
-    <ImageView
-        android:layout_width="218dp"
-        android:layout_height="184dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="0dp"
-        android:src="@drawable/logoifome" />
+    <!-- Área de Login -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="16dp"
+android:layout_margin="16dp"
+android:background="#FFFFFF"
+    android:elevation="4dp"
+    android:layout_marginTop="32dp"
+    android:layout_marginBottom="32dp"
+    android:paddingTop="24dp"
+    android:paddingBottom="24dp"
+    android:clipToPadding="false">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="298dp"
-        android:background="#FFFF00"
-        android:orientation="vertical">
+    <!-- Texto: Usuário -->
+<TextView
+android:id="@+id/textView"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Usuário"
+android:textAlignment="center"
+android:textColor="#333333"
+android:textSize="18sp"
+android:layout_marginBottom="8dp"
+android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
+<EditText
+android:id="@+id/edtusr"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="Digite seu e-mail"
+android:inputType="textEmailAddress"
+android:backgroundTint="#CCCCCC"
+android:padding="12dp"
+android:layout_marginBottom="16dp"
+android:textColor="#000000"
+android:textColorHint="#777777" />
 
-            android:text="Usuario"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+<TextView
+android:id="@+id/textViewSenha"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Senha"
+android:textAlignment="center"
+android:textColor="#333333"
+android:textSize="18sp"
+android:layout_marginBottom="8dp"
+android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/edtusr"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            android:textColor="#FF0000" />
+<EditText
+android:id="@+id/edtsenha"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:hint="Digite sua senha"
+android:inputType="textPassword"
+android:backgroundTint="#CCCCCC"
+android:padding="12dp"
+android:layout_marginBottom="24dp"
+android:textColor="#000000"
+android:textColorHint="#777777" />
 
-        <TextView
-            android:id="@+id/textViewSenha"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:text="Senha"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+<Button
+android:id="@+id/btlogar"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Entrar"
+android:backgroundTint="#FF5722"
+android:textColor="#FFFFFF"
+android:textSize="16sp"
+android:elevation="2dp"
+android:padding="12dp" />
 
-        <EditText
-            android:id="@+id/edtsenha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword"
-            android:textColor="#FF0000" />
-
-        <Button
-            android:id="@+id/btlogar"
-            android:layout_width="331dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="#FF0000"
-
-            android:text="Entrar" />
-
-        <TextView
-            android:id="@+id/linkCriaConta"
-            android:layout_width="match_parent"
-            android:layout_height="39dp"
-            android:text="Sem conta? Crie uma aqui"
-            android:textAlignment="center"
-            android:textColor="#090909"
-            android:textStyle="bold" />
+<TextView
+android:id="@+id/linkCriaConta"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Não tem conta? Crie uma aqui"
+android:textAlignment="center"
+android:textColor="#FF5722"
+android:layout_marginTop="16dp"
+android:textSize="14sp"
+android:textStyle="bold" />
     </LinearLayout>
 
-
-</LinearLayout>
+    </LinearLayout>

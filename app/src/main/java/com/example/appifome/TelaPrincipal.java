@@ -10,6 +10,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -21,7 +22,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class TelaPrincipal extends AppCompatActivity {
-    CheckBox checkPizza, checkBebida;
+    Switch SwitchPizza, SwitchBebida;
     RadioGroup radioGroupTamanho, radioGroupEntrega;
     Spinner spinnerSabor, spinnerBebida;
     EditText editEndereco;
@@ -38,10 +39,10 @@ public class TelaPrincipal extends AppCompatActivity {
 
         userId = getIntent().getIntExtra("userId", -1);
 
-        checkPizza = findViewById(R.id.checkbox_pizza);
-        checkBebida = findViewById(R.id.checkbox_bebida);
+        SwitchPizza = findViewById(R.id.switch_pizza);
+        SwitchBebida = findViewById(R.id.switch_bebida);
         radioGroupTamanho = findViewById(R.id.radio_group_tamanho);
-        radioGroupEntrega = findViewById(R.id.radio_group_tele);
+        radioGroupEntrega = findViewById(R.id.radio_group_entrega);
         spinnerSabor = findViewById(R.id.spinner_sabor);
         spinnerBebida = findViewById(R.id.spinner_bebida);
         editEndereco = findViewById(R.id.edit_endereco);
@@ -53,11 +54,11 @@ public class TelaPrincipal extends AppCompatActivity {
     }
 
     private void enviarPedido() {
-        boolean pizza = checkPizza.isChecked();
+        boolean pizza = SwitchPizza.isChecked();
         String tamanho = pizza ? getSelectedTamanho() : "NA";
         String sabor = pizza ? spinnerSabor.getSelectedItem().toString() : "NA";
 
-        boolean bebida = checkBebida.isChecked();
+        boolean bebida = SwitchBebida.isChecked();
         String descBebida = bebida ? spinnerBebida.getSelectedItem().toString() : "NA";
 
         String tele = isTeleEntrega() ? "Sim" : "Não";
@@ -125,6 +126,6 @@ public class TelaPrincipal extends AppCompatActivity {
 
     private boolean isTeleEntrega() {
         int selectedEntregaId = radioGroupEntrega.getCheckedRadioButtonId();
-        return selectedEntregaId == R.id.radio_tele_entrega;
+        return selectedEntregaId == R.id.radio_group_entrega;
     }
 }

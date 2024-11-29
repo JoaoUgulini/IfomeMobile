@@ -2,38 +2,58 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFF00"
+    android:background="@color/background_light"
     android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
+        android:orientation="vertical"
+        android:background="@drawable/background_card"
+        android:elevation="4dp"
+        android:padding="16dp"
+        android:layout_marginBottom="16dp">
 
         <TextView
             android:id="@+id/text_titulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FF0000"
             android:gravity="center"
-            android:padding="10dp"
-            android:text="Pedidos - IFome!!!"
-            android:textColor="#FFFF00"
-            android:textSize="24sp" />
+            android:text="Pedidos"
+            android:textColor="@color/primary_text"
+            android:textSize="28sp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginBottom="16dp" />
 
-        <CheckBox
-            android:id="@+id/checkbox_pizza"
+        <TextView
+            android:id="@+id/text_pizza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pizza" />
+            android:text="Escolha sua Pizza"
+            android:textColor="@color/primary_text"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif" />
+
+        <Switch
+            android:id="@+id/switch_pizza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adicionar Pizza" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tamanho"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/secondary_text"
+            android:textSize="14sp" />
 
         <RadioGroup
             android:id="@+id/radio_group_tamanho"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="16dp">
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/radio_pequena"
@@ -55,11 +75,12 @@
         </RadioGroup>
 
         <TextView
-            android:id="@+id/text_sabor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sabores"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:textColor="@color/primary_text"
+            android:textSize="16sp" />
 
         <Spinner
             android:id="@+id/spinner_sabor"
@@ -67,57 +88,66 @@
             android:layout_height="wrap_content"
             android:entries="@array/sabores"/>
 
-        <CheckBox
-            android:id="@+id/checkbox_bebida"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bebida"
-            android:layout_marginTop="16dp" />
+            android:text="Adicionar Bebida"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/primary_text"
+            android:textSize="16sp" />
+
+        <Switch
+            android:id="@+id/switch_bebida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adicionar Bebida" />
 
         <Spinner
             android:id="@+id/spinner_bebida"
             android:layout_width="match_parent"
-            android:entries="@array/bebidas"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:entries="@array/bebidas"/>
 
         <TextView
             android:id="@+id/text_entrega"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Entrega"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:textColor="@color/primary_text"
+            android:textSize="16sp" />
 
         <RadioGroup
-            android:id="@+id/radio_group_tele"
+            android:id="@+id/radio_group_entrega"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/radio_entrega_local"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Entrega Local" />
+                android:text="Retirar" />
 
             <RadioButton
-                android:id="@+id/radio_tele_entrega"
+                android:id="@+id/radio_entrega_tele"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tele Entrega" />
+                android:text="Entrega" />
         </RadioGroup>
 
         <EditText
             android:id="@+id/edit_endereco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Endereço tele entrega"
+            android:hint="Endereço"
             android:layout_marginTop="8dp" />
 
         <EditText
             android:id="@+id/edit_nome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nome"
+            android:hint="Nome do Cliente"
             android:layout_marginTop="16dp" />
 
         <Button
@@ -125,17 +155,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="REALIZAR PEDIDO"
-            android:background="#FF0000"
-            android:textColor="#FFFFFF"
+            android:backgroundTint="@color/button_primary"
+            android:textColor="@color/white"
             android:layout_marginTop="16dp" />
 
         <Button
             android:id="@+id/btn_retornar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RETORNAR"
-            android:background="#FF0000"
-            android:textColor="#FFFFFF"
+            android:text="VOLTAR"
+            android:backgroundTint="@color/button_secondary"
+            android:textColor="@color/white"
             android:layout_marginTop="8dp" />
     </LinearLayout>
+
 </ScrollView>
