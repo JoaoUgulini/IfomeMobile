@@ -19,29 +19,27 @@ import java.util.Iterator;
 public class MainActivity extends AppCompatActivity {
     Button btlogar;
     TextView linkregistro;
-    EditText edtlogin,edtsenha;
-    String txtretorno="";
-    String login="";
-    String senha="";
+    EditText edtlogin, edtsenha;
+    String login = "";
+    String senha = "";
+    int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        edtlogin=(EditText)findViewById(R.id.edtusr);
-        edtsenha=(EditText)findViewById(R.id.edtsenha);
+        edtlogin = findViewById(R.id.edtusr);
+        edtsenha = findViewById(R.id.edtsenha);
 
-        btlogar=(Button) findViewById(R.id.btlogar);
+        btlogar = findViewById(R.id.btlogar);
         btlogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new EnviajsonpostLogineSenha().execute();
-         }
+            }
         });
 
-
-
-        linkregistro =(TextView) findViewById(R.id.linkCriaConta);
+        linkregistro = findViewById(R.id.linkCriaConta);
         linkregistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     class EnviajsonpostLogineSenha extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... arg0) {
@@ -59,26 +58,26 @@ public class MainActivity extends AppCompatActivity {
                 jsonValores.put("login", edtlogin.getText().toString());
                 jsonValores.put("senha", edtsenha.getText().toString());
                 conexaouniversal mandar = new conexaouniversal();
-                String mensagem=mandar.postJSONObject(url,jsonValores);
+                String mensagem = mandar.postJSONObject(url, jsonValores);
 
-                try{
+                try {
                     JSONObject jsonobjc = new JSONObject(mensagem);
                     JSONArray jsonvet = jsonobjc.getJSONArray("usuario");
-                    for(int i=0;i<jsonvet.length();i++){
-                        JSONObject jsonitem=jsonvet.getJSONObject(i);
-                        login=jsonitem.optString("nome").toString();
-                        senha=jsonitem.optString("senha").toString();
+                    for (int i = 0; i < jsonvet.length(); i++) {
+                        JSONObject jsonitem = jsonvet.getJSONObject(i);
+                        login = jsonitem.optString("nome");
+                        senha = jsonitem.optString("senha");
+                        userId = jsonitem.optInt("id");
                     }
-                    if ((edtlogin.getText().toString().equals(login))&&(edtsenha.getText().toString().equals(senha)))
-                    {
+                    if ((edtlogin.getText().toString().equals(login)) && (edtsenha.getText().toString().equals(senha))) {
                         Intent i = new Intent(getApplicationContext(), TelaPrincipal.class);
+                        i.putExtra("userId", userId);
                         startActivity(i);
                     }
 
-                }catch (Exception ex){
-                    Toast.makeText(MainActivity.this,"Problemas ao tentar conectar",Toast.LENGTH_LONG).show();
+                } catch (Exception ex) {
+                    runOnUiThread(() -> Toast.makeText(MainActivity.this, "Problemas ao tentar conectar", Toast.LENGTH_LONG).show());
                 }
-
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -88,15 +87,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         public String getPostDataString(JSONObject params) throws Exception {
-
             StringBuilder result = new StringBuilder();
             boolean first = true;
 
             Iterator<String> itr = params.keys();
 
-            while(itr.hasNext()){
-
-                String key= itr.next();
+            while (itr.hasNext()) {
+                String key = itr.next();
                 Object value = params.get(key);
 
                 if (first)
@@ -107,15 +104,8 @@ public class MainActivity extends AppCompatActivity {
                 result.append(URLEncoder.encode(key, "UTF-8"));
                 result.append("=");
                 result.append(URLEncoder.encode(value.toString(), "UTF-8"));
-
             }
             return result.toString();
         }
-
-
     }
-
-
-
-
 }

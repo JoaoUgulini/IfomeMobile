@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFF00"
+    tools:context=".tela_pedidos">
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PEDIDOS"
+        android:textAlignment="center" />
+
+    <CheckBox
+        android:id="@+id/cpizza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PIZZA" />
+
+    <RadioGroup
+        android:id="@+id/rgtamanho"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rdpequeno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pequena" />
+
+        <RadioButton
+            android:id="@+id/rdmedia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Média" />
+
+        <RadioButton
+            android:id="@+id/rdgrande"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Grande" />
+
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SABORES"
+        android:textAlignment="center" />
+
+    <Spinner
+        android:id="@+id/spsabores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/sabores"
+        />
+    <CheckBox
+        android:id="@+id/crefri"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bebida" />
+    <Spinner
+        android:id="@+id/spmarcas"
+        android:layout_width="match_parent"
+        android:entries="@array/bebidas"
+        android:layout_height="wrap_content" />
+
+    <RadioGroup
+        android:id="@+id/rgtele"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rdbusca"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Entrega Local" />
+
+        <RadioButton
+            android:id="@+id/rdtele"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tele Entrega" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Endereco tele entrega"
+        android:textAlignment="center" />
+
+    <EditText
+        android:id="@+id/edtend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Name" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF0000"
+        android:textColor="#FFFFFF"
+        android:text="Realizar pedido" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF0000"
+        android:textColor="#FFFFFF"
+        android:text="Retornar" />
+</LinearLayout>

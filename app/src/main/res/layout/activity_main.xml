@@ -8,7 +8,6 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <!-- Logo -->
 <ImageView
 android:layout_width="150dp"
 android:layout_height="150dp"
@@ -17,7 +16,6 @@ android:layout_marginTop="48dp"
 android:src="@drawable/logoifome"
 android:contentDescription="Logo IFome" />
 
-    <!-- Área de Login -->
 <LinearLayout
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
@@ -32,7 +30,6 @@ android:background="#FFFFFF"
     android:paddingBottom="24dp"
     android:clipToPadding="false">
 
-    <!-- Texto: Usuário -->
 <TextView
 android:id="@+id/textView"
 android:layout_width="match_parent"

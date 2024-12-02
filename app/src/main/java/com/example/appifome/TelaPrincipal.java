@@ -6,7 +6,6 @@ import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -27,9 +26,9 @@ public class TelaPrincipal extends AppCompatActivity {
     Spinner spinnerSabor, spinnerBebida;
     EditText editEndereco;
     Button btnRealizarPedido, btnRetornar;
+
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
-
     private int userId;
 
     @Override
@@ -38,6 +37,11 @@ public class TelaPrincipal extends AppCompatActivity {
         setContentView(R.layout.activity_tela_principal);
 
         userId = getIntent().getIntExtra("userId", -1);
+        if (userId == -1) {
+            Toast.makeText(this, "Erro: ID do usuário não recebido.", Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
 
         SwitchPizza = findViewById(R.id.switch_pizza);
         SwitchBebida = findViewById(R.id.switch_bebida);
@@ -63,11 +67,6 @@ public class TelaPrincipal extends AppCompatActivity {
 
         String tele = isTeleEntrega() ? "Sim" : "Não";
         String endereco = tele.equals("Sim") ? editEndereco.getText().toString() : "NA";
-
-        if (userId == -1) {
-            Toast.makeText(this, "Erro: ID do usuário inválido.", Toast.LENGTH_SHORT).show();
-            return;
-        }
 
         JSONObject jsonPedido = new JSONObject();
         try {
@@ -126,6 +125,6 @@ public class TelaPrincipal extends AppCompatActivity {
 
     private boolean isTeleEntrega() {
         int selectedEntregaId = radioGroupEntrega.getCheckedRadioButtonId();
-        return selectedEntregaId == R.id.radio_group_entrega;
+        return selectedEntregaId == R.id.radio_entrega_tele;
     }
 }

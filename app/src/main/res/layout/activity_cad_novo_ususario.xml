@@ -1,128 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#FF0000"
+    android:background="#F5F5F5"
     tools:context=".CadNovoUsuario">
 
+    <!-- Logo -->
     <ImageView
         android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/logoifome"
+        android:contentDescription="Logo IFome" />
+
+    <!-- ScrollView para permitir a rolagem -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="85dp"
-        android:src="@drawable/logoifome" /> />
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:fillViewport="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="540dp"
-        android:background="#FFFF00"
-        android:orientation="vertical"
-        >
-
-        <TextView
-            android:id="@+id/textView6"
+        <!-- Container principal -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cadastro de novo usuário"
-            android:textAlignment="center"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:text="Nome"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/edtreglogin"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
+            android:orientation="vertical"
+            android:padding="16dp"
             android:background="#FFFFFF"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textSize="20sp" />
+            android:elevation="4dp"
+            android:layout_margin="16dp">
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            <!-- Título -->
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cadastro de novo usuário"
+                android:textAlignment="center"
+                android:textColor="#333333"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp" />
 
-            android:text="Senha"
-            android:textSize="20sp" />
+            <!-- Campo: Nome -->
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nome"
+                android:textColor="#333333"
+                android:textSize="18sp" />
 
-        <EditText
-            android:id="@+id/edtregsenha"
+            <EditText
+                android:id="@+id/edtreglogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/edit_text"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:hint="Digite seu nome"
+                android:textColor="#000000" />
 
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:inputType="textPassword" />
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Endereço"
-            android:textSize="20sp" />
+            <!-- Campo: Senha -->
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Senha"
+                android:textColor="#333333"
+                android:textSize="18sp" />
 
-        <EditText
-            android:id="@+id/edtregendereco"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:background="#FFFFFF"
-            android:ems="10"
-            />
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Fone"
-            android:textSize="20sp" />
+            <EditText
+                android:id="@+id/edtregsenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/edit_text"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:inputType="textPassword"
+                android:hint="Digite sua senha" />
 
-        <EditText
-            android:id="@+id/edtregfone"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:textSize="20sp"
-            />
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cidade"
-            android:textSize="20sp" />
+            <!-- Campo: Endereço -->
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Endereço"
+                android:textColor="#333333"
+                android:textSize="18sp" />
 
-        <EditText
-            android:id="@+id/edtregcidade"
-            android:layout_width="match_parent"
-            android:layout_height="54dp"
-            android:background="#FFFFFF"
-            android:ems="10"
-            />
+            <EditText
+                android:id="@+id/edtregendereco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/edit_text"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:hint="Digite seu endereço" />
 
+            <!-- Campo: Telefone -->
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Telefone"
+                android:textColor="#333333"
+                android:textSize="18sp" />
 
-        <Button
-            android:id="@+id/btregregistrar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FF0000"
-            android:textSize="20sp"
-            android:text="Registrar" />
+            <EditText
+                android:id="@+id/edtregfone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/edit_text"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:inputType="phone"
+                android:hint="Digite seu telefone" />
 
-        <Button
-            android:id="@+id/btregretornar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FF0000"
-            android:textSize="20sp"
-            android:text="Retornar" />
-    </LinearLayout>
+            <!-- Campo: Cidade -->
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cidade"
+                android:textColor="#333333"
+                android:textSize="18sp" />
 
+            <EditText
+                android:id="@+id/edtregcidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/edit_text"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:hint="Digite sua cidade" />
+
+            <!-- Botão Registrar -->
+            <Button
+                android:id="@+id/btregregistrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Registrar"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#FF5722"
+                android:elevation="2dp"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Botão Retornar -->
+            <Button
+                android:id="@+id/btregretornar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Retornar"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#FF5722"
+                android:elevation="2dp" />
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
